@@ -21,8 +21,6 @@ android {
 }
 
 dependencies {
-    compile group: 'org.jsoup', name: 'jsoup', version: '1.13.1'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api fileTree(dir: 'libs', include: ['*.jar'])
-
 }

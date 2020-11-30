@@ -21,9 +21,37 @@ class Utils {
     }
 
 
+    public static String 取中间(String text, String left, String right) {
+        String result = "";
+        int zLen;
+        if (left == null || left.isEmpty()) {
+            zLen = 0;
+        } else {
+            zLen = text.indexOf(left);
+            if (zLen > -1) {
+                zLen += left.length();
+            } else {
+                zLen = 0;
+            }
+        }
+        int yLen = text.indexOf(right, zLen);
+        if (yLen < 0 || right == null || right.isEmpty()) {
+            yLen = text.length();
+        }
+        result = text.substring(zLen, yLen);
+        return result;
+    }
 
+    static boolean 是否包含主人(String zr, Long qq){
 
-
+        String[] fgadminList = zr.split(",");
+        for(String admin:fgadminList) {
+            if (admin.matches(Long.toString(qq))) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 
     /**
